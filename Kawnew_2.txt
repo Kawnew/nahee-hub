@@ -1,0 +1,42 @@
+repeat wait() until game:IsLoaded()
+
+
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/kickTh/New-Ui/main/FluxLib_Mob_Gui.txt"))()
+local w = library:Window("ข้าวเหนียว" , "Kawnew|Blox Fruit", 
+Color3.fromRGB(66, 134, 245), Enum.KeyCode.LeftControl)
+local HomeTab = w:Tab("หน้าหลัก", 6026568198)
+
+
+HomeTab:Line()
+
+HomeTab:Button("Kick ","อย่ากดนะ;)ไม่งั้นนายจะโดนตะ!!!", function()
+    game.Players.LocalPlayer:Kick("ก็บอกไปเเล้วไงว่าอย่ากดด!!!!")
+end)
+HomeTab:Button("เกี่ยวกับสคริป","ลองกดที่ปุ่มดูเส้✌️🙂", function()
+    library:Notification("สคริปของคนสวย😗(สคริปBlox fruit)", "เอิ่ม...เครๆ")
+end)
+
+HomeTab:Toggle("ออโต้ฟาร์ม", "รัตนาา!!!!//ว่ายังไง!!!🤣👽", false, function(t)
+    
+end)
+HomeTab:Button("สคริปข้าวเหนียวตัวเก่า","สคริปตัวเก่าไงงงงงง;-; ", function()
+    library:Notification("กำลังทำลิงค์loadstringกรุณารอ", "เคร(เครๆหน้าหีอะไอ่สัสกูรอไม่ไหวอีเหี้ยนิทำเร็วๆดิไอ่สัส)")
+end)
+HomeTab:Button("เกี่ยวกับสคริป|ตัวเก่า","สคริปตัวเก่ามีอะไรบ้างเเละคืออะไร ", function()
+    library:Notification("สรริปตัวเก่าเป็นเเหล่งรวมทุกสคริปสำหรับสายฟรีที่ไม่เคยใช้สคริปซื้อมาก่อน", "อาเชๆ")
+end)
+HomeTab:Toggle("โปรฟาร์มกล่องชิวๆ", "ฟาร์มกล่องๆ", false, function(t)
+    loadstring(game:HttpGet"https://raw.githubusercontent.com/kickTh/dfhjhgkkkit/main/TP-Chest.lua")()
+end)
+local MobDropdown = HomeTab:Dropdown("Select ", GetMob(), function(v)
+end)
+
+
+
+
+HomeTab:Button("Clear","", function()
+    MobDropdown:Clear()
+    for i, v in pairs(GetMob()) do
+        MobDropdown:Add(v)
+    end
+end)
